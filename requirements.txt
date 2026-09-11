@@ -1,5 +1,7 @@
 flask
+gunicorn
 numpy
 xgboost
 joblib
 shap
+scikit-learn
