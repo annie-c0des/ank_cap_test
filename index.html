@@ -1,0 +1,35 @@
+<head>
+     <link rel="stylesheet" href="static/style.css" type="text/css">
+</head>
+<body >
+    capstone
+
+        <div id="pages">
+            <a href="{{ url_for('home') }}" class="page_link_active">Home</a>
+            <a href="{{ url_for('find_care') }}" class="page_link">Find Care</a>
+        </div>
+<!--  "sharp chest pain", "dizziness", "insomnia", -->
+<input type="text" id="searchInput" placeholder="Search 377 items..." onkeyup="searchList()">
+    <form id="form" method="POST">
+        
+
+
+        <input type="checkbox" name="checked" value="sharp chest pain">
+        <p>sharp chest pain</p>
+        <input type="checkbox" name="checked" value="dizziness">
+        <p>dizziness</p>
+        <input type="checkbox" name="checked" value="insomnia">
+        <p>insomnia</p>
+
+
+        <input type="submit" value="predict disease">
+    </form>
+
+
+{% if results %}
+<div id="results">
+    {{ results }}
+</div>
+{% endif %}
+<script src="{{ url_for('static', filename='js/search_bar.js') }}"></script>
+</body>
